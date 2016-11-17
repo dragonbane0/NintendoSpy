@@ -69,6 +69,7 @@
     <Compile Include="Readers\SerialControllerReader.cs" />
     <Compile Include="Readers\GamepadReader.cs" />
     <Compile Include="Readers\SuperNESandNES.cs" />
+    <Compile Include="Readers\WiiUProController.cs" />
     <Compile Include="Readers\XInputReader.cs" />
     <Compile Include="SendKeys.cs" />
     <Compile Include="SerialMonitor.cs" />
