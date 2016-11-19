@@ -52,6 +52,8 @@ namespace NintendoSpy
 
             updatePortList ();
             _vm.Ports.SelectFirst ();
+
+            _vm.IPAddress = Properties.Settings.Default.ipAddress;
         }
 
         void showSkinParseErrors (List <string> errs) {
@@ -69,8 +71,15 @@ namespace NintendoSpy
         {
             this.Hide ();
 
-            try {
-                var reader = _vm.Sources.SelectedItem.BuildReader(_vm.Ports.SelectedItem);
+            try
+            {
+                IControllerReader reader = null;
+
+                if (_vm.Sources.SelectedItem.RequiresIPAdd)
+                    reader = _vm.Sources.SelectedItem.BuildReader(_vm.IPAddress);
+                else
+                    reader = _vm.Sources.SelectedItem.BuildReader(_vm.Ports.SelectedItem);
+
                 if (_vm.DelayInMilliseconds > 0)
                     reader = new DelayedControllerReader(reader, _vm.DelayInMilliseconds);
 
@@ -87,6 +96,9 @@ namespace NintendoSpy
                 MessageBox.Show (ex.Message, "NintendoSpy", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
+            Properties.Settings.Default.ipAddress = _vm.IPAddress;
+            Properties.Settings.Default.Save();
+
             this.Show ();
         }
 
@@ -94,6 +106,7 @@ namespace NintendoSpy
         {
             if (_vm.Sources.SelectedItem == null) return;
             _vm.ComPortOptionVisibility = _vm.Sources.SelectedItem.RequiresComPort ? Visibility.Visible : Visibility.Hidden;
+            _vm.IPAddOptionVisibility = _vm.Sources.SelectedItem.RequiresIPAdd ? Visibility.Visible : Visibility.Hidden;
             _vm.Skins.UpdateContents (_skins.Where (x => x.Type == _vm.Sources.SelectedItem));
             _vm.Skins.SelectFirst ();
         }
@@ -136,6 +149,7 @@ namespace NintendoSpy
         public ListView <Skin.Background> Backgrounds { get; set; }
         public ListView <InputSource> Sources { get; set; }
         public int DelayInMilliseconds { get; set; }
+        public string IPAddress { get; set; }
 
         Visibility _comPortOptionVisibility;
         public Visibility ComPortOptionVisibility {
@@ -143,6 +157,17 @@ namespace NintendoSpy
             set {
                 _comPortOptionVisibility = value;
                 NotifyPropertyChanged ("ComPortOptionVisibility");
+            }
+        }
+
+        Visibility _ipAddOptionVisibility;
+        public Visibility IPAddOptionVisibility
+        {
+            get { return _ipAddOptionVisibility; }
+            set
+            {
+                _ipAddOptionVisibility = value;
+                NotifyPropertyChanged("IPAddOptionVisibility");
             }
         }
 

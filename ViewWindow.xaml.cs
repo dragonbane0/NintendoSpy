@@ -40,7 +40,6 @@ namespace NintendoSpy
         }
 
 
-
         public ViewWindow (Skin skin, Skin.Background skinBackground, IControllerReader reader)
         {
             InitializeComponent ();

@@ -76,6 +76,8 @@
     <Compile Include="Readers\SignalTool.cs" />
     <Compile Include="Skin.cs" />
     <Compile Include="ConfigParseException.cs" />
+    <Compile Include="Tools\EndianBinaryReader.cs" />
+    <Compile Include="Tools\EndianBinaryWriter.cs" />
     <Compile Include="ViewWindow.xaml.cs">
       <DependentUpon>ViewWindow.xaml</DependentUpon>
     </Compile>
@@ -119,6 +121,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

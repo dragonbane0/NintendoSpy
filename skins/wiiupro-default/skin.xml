@@ -12,12 +12,14 @@
 <!-- Shoulder Buttons & Touch -->
     <button name="l" image="WiiU-Buttons\\L.png" x="76" y="40" />
     <button name="r" image="WiiU-Buttons\\R.png" x="447" y="43" />
-    <button name="trig_l" image="WiiU-Buttons\\ZL.png" x="19" y="17" />
-    <button name="trig_r" image="WiiU-Buttons\\ZR.png" x="584" y="17" />
+    <button name="zl" image="WiiU-Buttons\\ZL.png" x="19" y="17" />
+    <button name="zr" image="WiiU-Buttons\\ZR.png" x="584" y="17" />
+    <button name="touch" image="WiiU-Buttons\\Touch.png" x="286" y="370" />
 
 <!-- Center Buttons -->
-    <button name="back" image="WiiU-Buttons\\Select.png" x="245" y="170" />
-    <button name="start" image="WiiU-Buttons\\Start.png" x="356" y="170" />
+    <button name="plus" image="WiiU-Buttons\\Start.png" x="356" y="170" />
+    <button name="minus" image="WiiU-Buttons\\Select.png" x="245" y="170" />
+    <button name="home" image="WiiU-Buttons\\Home.png" x="298" y="170" />
 
 <!-- D-Pad -->
     <button name="up" image="WiiU-Buttons\\Dpad-Up.png" x="181" y="222" />
@@ -26,10 +28,10 @@
     <button name="right" image="WiiU-Buttons\\Dpad-Right.png" x="207" y="257" />
    
 <!-- Control sticks -->
-    <stick xname="lstick_x" yname="lstick_y" image="WiiU-Buttons\\Stick1.png" x="87" y="127" xrange="20" yrange="20"/>
-    <stick xname="rstick_x" yname="rstick_y" image="WiiU-Buttons\\Stick2.png" x="481" y="127" xrange="20" yrange="20"/>
-    <button name="l3" image="WiiU-Buttons\\Stick1click.png" x="87" y="127" />
-    <button name="r3" image="WiiU-Buttons\\Stick2click.png" x="481" y="127" />
+    <stick xname="lstick_x" yname="lstick_y" image="WiiU-Buttons\\Stick1.png" x="92" y="132" xrange="24" yrange="24"/>
+    <stick xname="cstick_x" yname="cstick_y" image="WiiU-Buttons\\Stick2.png" x="486" y="132" xrange="24" yrange="24"/>
+    <button name="l3" image="WiiU-Buttons\\Stick1click.png" x="78" y="118" />
+    <button name="r3" image="WiiU-Buttons\\Stick2click.png" x="474" y="118" />
 
 
 </skin>
