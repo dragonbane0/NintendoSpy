@@ -5,5 +5,8 @@
     <Setting Name="ipAddress" Type="System.String" Scope="User">
       <Value Profile="(Default)">192.168.0.0</Value>
     </Setting>
+    <Setting Name="lastInputChoice" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

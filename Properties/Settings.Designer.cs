@@ -34,5 +34,17 @@ namespace NintendoSpy.Properties {
                 this["ipAddress"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string lastInputChoice {
+            get {
+                return ((string)(this["lastInputChoice"]));
+            }
+            set {
+                this["lastInputChoice"] = value;
+            }
+        }
     }
 }

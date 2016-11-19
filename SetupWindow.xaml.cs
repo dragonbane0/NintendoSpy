@@ -54,6 +54,15 @@ namespace NintendoSpy
             _vm.Ports.SelectFirst ();
 
             _vm.IPAddress = Properties.Settings.Default.ipAddress;
+
+            foreach (InputSource source in InputSource.ALL)
+            {
+                if (source.TypeTag == Properties.Settings.Default.lastInputChoice)
+                {
+                    _vm.Sources.SelectedItem = source;
+                    break;
+                }
+            }
         }
 
         void showSkinParseErrors (List <string> errs) {
@@ -97,6 +106,7 @@ namespace NintendoSpy
             }
 
             Properties.Settings.Default.ipAddress = _vm.IPAddress;
+            Properties.Settings.Default.lastInputChoice = _vm.Sources.SelectedItem.TypeTag;
             Properties.Settings.Default.Save();
 
             this.Show ();
