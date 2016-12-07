@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skin name="WiiU Pro" author="Trezc0" type="wiiupro">
 
-    <background name="Default" image="WiiU_Pro\\WiiU_Pro.png" />
+    <background name="White" image="WiiU_Pro\\WiiU_Pro.png" />
+    <background name="Blue" image="WiiU_Pro\\WiiU_Pro_blue.png" />
+    <background name="Green" image="WiiU_Pro\\WiiU_Pro_green.png" />
+    <background name="Pink" image="WiiU_Pro\\WiiU_Pro_pink.png" />
 
 <!-- Main Buttons -->
     <button name="a" image="WiiU-Buttons\\A.png" x="468" y="255" />
